@@ -6,9 +6,7 @@ function theme_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
-
-
-//ウィジェット登録
+// ウィジェットの登録
 function theme_widgets_init() {
     // ad-topウィジェットエリアの登録
     register_sidebar( array(
@@ -45,8 +43,6 @@ function theme_widgets_init() {
 }
 add_action( 'widgets_init', 'theme_widgets_init' );
 
-
-
 // メニューの登録
 function theme_register_menus() {
     register_nav_menus(
@@ -60,3 +56,4 @@ function theme_register_menus() {
 }
 add_action( 'init', 'theme_register_menus' );
 
+?>
