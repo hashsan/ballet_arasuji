@@ -9,7 +9,8 @@ function the_breadcrumbs() {
 }
 
 // ウィジェットを表示する関数
-function the_widget($name) {
+//the_widgetは使われているのでに。
+function the_my_widget($name) {
     if (is_active_sidebar($name)) {
         dynamic_sidebar($name);
     }
@@ -35,7 +36,7 @@ function the_menu($name) {
 <body>
 
 <div class="ad top">
-  <?php the_widget('ad-top'); ?>
+  <?php the_my_widget('ad-top'); ?>
 </div>
 
 <div class="breadcrumbs">
@@ -66,7 +67,7 @@ function the_menu($name) {
 
 <footer>
   <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
-  <?php the_widget('footer'); ?>
+  <?php the_my_widget('footer'); ?>
 </footer>
 
 <div class="breadcrumbs">
@@ -74,7 +75,7 @@ function the_menu($name) {
 </div>
 
 <div class="ad bottom">
-  <?php the_widget('ad-bottom'); ?>
+  <?php the_my_widget('ad-bottom'); ?>
 </div>
 
 <?php wp_footer(); ?>
