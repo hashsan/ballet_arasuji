@@ -29,6 +29,8 @@ function the_menu($name) {
 <head>
 <meta charset="UTF-8">
 <?php wp_head(); ?>
+<?php wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' ); ?>
+    
 </head>
 <body>
 
