@@ -2,7 +2,7 @@
 // パンくずリストを表示する関数
 function the_breadcrumbs() {
     if (is_front_page()) {
-        echo 'home';
+        echo '<a href="' . home_url() . '">home</a>';
     } else {
         echo '<a href="' . home_url() . '">home</a> / <span>' . get_the_title() . '</span>';
     }
