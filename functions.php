@@ -8,6 +8,14 @@ function theme_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 */
 
+function remove_default_jquery() {
+    if (!is_admin()) {
+        wp_deregister_script('jquery');
+    }
+}
+add_action('wp_enqueue_scripts', 'remove_default_jquery');
+
+
 // ウィジェットの登録
 function theme_widgets_init() {
     // ad-topウィジェットエリアの登録
@@ -34,8 +42,8 @@ function theme_widgets_init() {
 
     // footerウィジェットエリアの登録
     register_sidebar( array(
-        'name'          => __( 'footer', 'theme_name' ),
-        'id'            => 'widget-footer',
+        'name'          => __( 'wi-footer', 'theme_name' ),
+        'id'            => 'wi-footer',
         'description'   => __( 'Widgets in this area will be displayed in the footer.', 'theme_name' ),
         'before_widget' => '<div class="widget">',
         'after_widget'  => '</div>',
@@ -50,7 +58,7 @@ function theme_register_menus() {
     register_nav_menus(
         array(
             'site-nav'   => __( 'Site Navigation', 'theme_name' ),
-            'social'     => __( 'Social Menu', 'theme_name' ),
+//            'social'     => __( 'Social Menu', 'theme_name' ), // 'social' メニューの登録
             'arasuji'    => __( 'Arasuji Menu', 'theme_name' )
             // 他のメニューを必要に応じて登録
         )
